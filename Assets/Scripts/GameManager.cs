@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
     private void ActualizarUI()
     {
         if (scoreText != null)
-            scoreText.text = $"Enemigos derrotados: {puntos}/{puntosParaGanar}";
+            scoreText.text = $"Puntos: {puntos}/{puntosParaGanar}";
     }
 
     public void Ganaste()
