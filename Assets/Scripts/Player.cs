@@ -25,6 +25,10 @@ public class Player : MonoBehaviour
     [SerializeField] LifePlayer lifePlayer;
     [SerializeField] private AudioSource shootAudioSource;
 
+    [Header("GameOver")]
+    [SerializeField] private GameManager gameManager;
+
+
     private void OnEnable()
     {
         move.action.Enable();
@@ -36,9 +40,13 @@ public class Player : MonoBehaviour
         //shoot.action.started += OnShoot;
     }
 
-    private void Awake()
+    private void Start()
     {
         lifePlayer.lifes = vidas;
+    }
+
+    private void Awake()
+    {
 
         if (animator == null)
         {
@@ -124,7 +132,11 @@ public class Player : MonoBehaviour
             lifePlayer.lifes = vidas;
             Destroy(elOtro.gameObject);
             if(vidas <= 0) 
-            { 
+            {
+                if (gameManager != null)
+                {
+                    gameManager.GameOver();
+                }
                 Destroy(this.gameObject);
             }
         }

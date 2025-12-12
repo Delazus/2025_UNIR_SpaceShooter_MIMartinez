@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour
     {
         //Random.Range(0f, 4f);//2.86f, 2.87f, 4.0000000f
         //Random.Range(0, 4);//0, 1, 2, 3
-        StartCoroutine(SpawnearEnemies());
     }
 
     // Update is called once per frame
@@ -22,13 +21,18 @@ public class Spawner : MonoBehaviour
         
     }
 
+    public void IniciarSpawn()
+    {
+        StartCoroutine(SpawnearEnemies());
+    }
+
     IEnumerator SpawnearEnemies()
     {
         for (int i = 0; i < 5; i++) //Niveles
         { 
             for (int j = 0; j < 2; j++) //Oladeas
             {
-                textNiveles.text = "Nivel " + (i + 1) + "-" + "Oledada " + (j + 1);
+                textNiveles.text = "Nivel " + (i + 1) + ": " + "Oledada " + (j + 1);
                 yield return new WaitForSeconds(1f);
                 textNiveles.text = "";
                 for (int k = 0; k < 3; k++) //0, 1, 2, 3, 4 // Enemigos

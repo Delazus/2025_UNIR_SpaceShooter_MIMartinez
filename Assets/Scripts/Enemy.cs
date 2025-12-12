@@ -7,10 +7,18 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float velocidad;
     [SerializeField] private GameObject shootEnemy;
     [SerializeField] private GameObject spawnPoint;
+    [SerializeField] private AudioSource shootAudioSource;
+
+    [Header("Score")]
+    [SerializeField] private int puntosPorMuerte = 1;
+    private GameManager gameManager;
+
+
     // Start is called before the first frame update
     void Start()
     {      
         StartCoroutine(SpawnearShoots());
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -28,6 +36,11 @@ public class Enemy : MonoBehaviour
         while (true)
         {
             Instantiate(shootEnemy, spawnPoint.transform.position, Quaternion.identity);
+            // Reproducir el sonido
+            if (shootAudioSource != null)
+            {
+                shootAudioSource.Play();
+            }
             yield return new WaitForSeconds(5f);
         }
     }
@@ -38,6 +51,10 @@ public class Enemy : MonoBehaviour
         {
             Destroy(elOtro.gameObject);
             Destroy(this.gameObject);
+            if (gameManager != null)
+            {
+                gameManager.SumarPuntos(puntosPorMuerte);
+            }
         }
     }
 }

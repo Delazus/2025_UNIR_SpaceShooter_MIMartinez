@@ -9,8 +9,12 @@ public class SpawnerEnemy2 : MonoBehaviour
     [SerializeField] Transform spawnLineBottom;
     void Start()
     {
-        StartCoroutine(LineSpawning());
 
+    }
+
+    public void IniciarSpawn()
+    {
+        StartCoroutine(LineSpawning());
     }
 
     IEnumerator LineSpawning()

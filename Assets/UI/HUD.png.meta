@@ -232,10 +232,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD_4
+      name: Box_bg_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 80
         width: 32
         height: 32
@@ -275,6 +275,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Box_bg_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 9, z: 9, w: 5}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd70526c81e995145b14930a7037d487
+      internalID: -174363329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1b8c5789afbcd4eb87d0292b39e73d
+      internalID: 811006734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -290,12 +334,15 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Box: -7859544607282556093
-      HUD_4: -8154498446710104070
+      Box_bg_1: -174363329
+      Box_bg_2: -8154498446710104070
       HUD_5: 8996260626950966665
       HUD_6: 4529786283596834260
       Healing: 1229794671371557974
       Life_O: -2205522050570982886
       Life_Off: -6869325624984279803
+      SpawnerEnemy2: -174363329
+      Star: 811006734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
