@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(-1, 0, 0) * velocidad * Time.deltaTime);
+        if (transform.position.x < -10)
+        {
+            Destroy(gameObject);
+        }
     }
     
     IEnumerator SpawnearShoots()
@@ -24,7 +28,7 @@ public class Enemy : MonoBehaviour
         while (true)
         {
             Instantiate(shootEnemy, spawnPoint.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
         }
     }
 

@@ -26,12 +26,12 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < 5; i++) //Niveles
         { 
-            for (int j = 0; j < 3; j++) //Oladeas
+            for (int j = 0; j < 2; j++) //Oladeas
             {
                 textNiveles.text = "Nivel " + (i + 1) + "-" + "Oledada " + (j + 1);
                 yield return new WaitForSeconds(1f);
                 textNiveles.text = "";
-                for (int k = 0; k < 10; k++) //0, 1, 2, 3, 4 // Enemigos
+                for (int k = 0; k < 3; k++) //0, 1, 2, 3, 4 // Enemigos
                 {
                     Vector3 puntoAleatorio = new Vector3(transform.position.x, Random.Range(-4.41f, 4.41f), 0);
                     Instantiate(enemyPrefab, puntoAleatorio, Quaternion.identity);
